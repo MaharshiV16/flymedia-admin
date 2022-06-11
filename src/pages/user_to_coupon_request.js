@@ -1,6 +1,6 @@
 import React from "react";
 
-import { List, Datagrid, TextField, BooleanField } from "react-admin";
+import { List, Datagrid, TextField, BooleanField, BooleanInput, SimpleForm, NumberInput, Create, TextInput } from "react-admin";
 
 export const UsertoCouponRequestList = (props) => {
 	return (
@@ -13,5 +13,19 @@ export const UsertoCouponRequestList = (props) => {
 				<TextField source="request" />
 			</Datagrid>
 		</List>
+	);
+};
+
+export const UserToCouponCreate = (props) => {
+	return (
+		<Create {...props} title="New User to Coupon Request">
+			<SimpleForm>
+				<NumberInput source="id" disabled />
+				<TextInput source="user" />
+				<TextInput source="campaign" />
+				<BooleanInput source="is_active" />
+				<TextInput source="request" />
+			</SimpleForm>
+		</Create>
 	);
 };

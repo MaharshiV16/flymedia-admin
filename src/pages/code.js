@@ -1,6 +1,6 @@
 import React from "react";
 
-import { List, Datagrid, TextField, BooleanField } from "react-admin";
+import { List, Datagrid, TextField, BooleanField, BooleanInput, SimpleForm, NumberInput, Create, TextInput } from "react-admin";
 
 export const CodeList = (props) => {
 	return (
@@ -13,5 +13,19 @@ export const CodeList = (props) => {
 				<BooleanField source="is_active" />
 			</Datagrid>
 		</List>
+	);
+};
+
+export const CodeCreate = (props) => {
+	return (
+		<Create {...props} title="New Code">
+			<SimpleForm>
+				<NumberInput source="id" disabled />
+				<TextInput source="adset" />
+				<TextInput source="code" />
+				<TextInput multiline="true" source="countries" />
+				<BooleanInput source="is_active" />
+			</SimpleForm>
+		</Create>
 	);
 };

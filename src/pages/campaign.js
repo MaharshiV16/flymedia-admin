@@ -1,6 +1,6 @@
 import React from "react";
 
-import { List, Datagrid, TextField, DateField, NumberField, BooleanField } from "react-admin";
+import { List, Datagrid, TextField, BooleanField, BooleanInput, SimpleForm, NumberInput, Create, TextInput, NumberField, DateField, DateInput } from "react-admin";
 
 export const CampaignList = (props) => {
 	return (
@@ -29,5 +29,35 @@ export const CampaignList = (props) => {
 				<DateField source="updated_at" />
 			</Datagrid>
 		</List>
+	);
+};
+
+export const CampaignCreate = (props) => {
+	return (
+		<Create {...props} title="New Campaign">
+			<SimpleForm>
+				<NumberInput source="id" disabled />
+				<TextInput source="name" />
+				<TextInput source="advertiser_name" />
+				<TextInput source="promotion" />
+				<NumberInput source="rating" />
+				<NumberInput source="category" />
+				<NumberInput source="manager" />
+				<DateInput source="created_at" />
+				<TextInput source="description" />
+				<TextInput source="coupons" />
+				<TextInput source="commission" />
+				<TextInput source="website" />
+				<TextInput source="dosdonts" />
+				<TextInput source="dosdonts" />
+				<BooleanInput source="status" />
+				<NumberInput source="price" />
+				<NumberInput source="validation_days" />
+				<TextInput source="icon" />
+				<BooleanInput source="is_ended" />
+				<BooleanInput source="is_active" />
+				<DateInput source="updated_at" />
+			</SimpleForm>
+		</Create>
 	);
 };

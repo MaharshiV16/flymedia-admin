@@ -1,6 +1,6 @@
 import React from "react";
 
-import { List, Datagrid, TextField, BooleanField } from "react-admin";
+import { List, Datagrid, TextField, BooleanField, Create, SimpleForm, NumberInput, TextInput, BooleanInput } from "react-admin";
 
 export const CampaignStatusList = (props) => {
 	return (
@@ -12,5 +12,18 @@ export const CampaignStatusList = (props) => {
                 <BooleanField source="status" />
             </Datagrid>
 		</List>
+	);
+};
+
+export const CampaignStatusCreate = (props) => {
+	return (
+		<Create {...props} title="New Campaign Status">
+			<SimpleForm>
+				<NumberInput source="id" disabled />
+				<TextInput source="user" />
+				<TextInput source="campaign" />
+				<BooleanInput source="status" />
+			</SimpleForm>
+		</Create>
 	);
 };
